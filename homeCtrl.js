@@ -1,6 +1,7 @@
-var myApp = angular.module('devMtIn');
+angular.module('devMtIn');
 
-myApp.controller('homeCtrl', function($scope) {
+myApp.controller('homeCtrl', function($scope, profileService) {
+
   $scope.myProfile = {
     friends: [{name: 'Kory'}, {name: 'Tyler'}, {name: 'Geoff'}]
   };
