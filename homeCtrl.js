@@ -21,4 +21,9 @@ myApp.controller('homeCtrl', function($scope, profileService) {
   }
     ];
 
+    $scope.deleteProfile = function() {
+      profileService.deleteProfile();
+      $scope.myProfile = profileService.checkForProfile();
+    }
+
 });

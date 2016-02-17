@@ -11,8 +11,12 @@ myApp.service('profileService', function() {
       return JSON.parse(localStorage.getItem('profile'));
     }
     return {
-      friends: [{name: 'Geoff'}, {name: 'Kory'}, {name: 'Tyler'}]
+      friends: [{name: 'Ryan'}, {name: 'Bryan'}, {name: 'Sarah'}, {name: 'Zac'}, {name: 'Erin'}]
     }
+  }
+
+  this.deleteProfile = function() {
+    localStorage.removeItem('profile');
   }
 
 });
