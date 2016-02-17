@@ -4,9 +4,12 @@ myApp.controller('homeCtrl', function($scope, profileService) {
 
   $scope.editing = false;
 
-  $scope.myProfile = {
-    friends: [{name: 'Kory'}, {name: 'Tyler'}, {name: 'Geoff'}]
-  };
+  $scope.saveProfile = function(profile) {
+    profileService.saveProfile(profile);
+    $scope.editing = false;
+  }
+
+  $scope.myProfile = profileService.checkForProfile();
 
   $scope.sortOptions = [{
     display: 'Ascending',
