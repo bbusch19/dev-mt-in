@@ -35,8 +35,14 @@ myApp.controller('homeCtrl', function($scope, profileService) {
     ];
 
     $scope.deleteProfile = function() {
-      profileService.deleteProfile();
-      $scope.myProfile = profileService.checkForProfile();
+      profileService.deleteProfile()
+      .then(function(deletedProfile) {
+        localStorage.removeItem('profileId');
+        $scope.myProfile = {};
+      })
+      .catch(function(err) {
+        console.log(err);
+      });
     }
 
 });

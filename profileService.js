@@ -27,7 +27,12 @@ myApp.service('profileService', function($http) {
   }
 
   this.deleteProfile = function() {
-    localStorage.removeItem('profile');
+    var profileId = JSON.parse(localStorage.getItem('profileId')).profileId;
+
+    return $http({
+      method: 'DELETE',
+      url: baseUrl + 'api/profiles/' + profileId
+    });
   }
 
 });
